@@ -3,7 +3,6 @@ import pandas as pd
 
 # Configuração do título e das páginas
 st.title("Cálculo de Margens Comerciais")
-st.sub.title("aproveitem amigos")
 st.sidebar.title("Selecione a Página")
 page = st.sidebar.selectbox("Escolha a margem:", ["Margem Absoluta", "Margem Relativa"])
 
