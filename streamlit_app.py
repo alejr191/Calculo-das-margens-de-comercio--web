@@ -3,6 +3,7 @@ import pandas as pd
 
 # Configuração do título e das páginas
 st.title("Cálculo de Margens Comerciais")
+st.sub.title("aproveitem amigos")
 st.sidebar.title("Selecione a Página")
 page = st.sidebar.selectbox("Escolha a margem:", ["Margem Absoluta", "Margem Relativa"])
 
@@ -20,10 +21,12 @@ def calculo_margens_relativas(preco_do_varejo, preco_do_atacado, preco_do_produt
     margem_varejo = (preco_do_varejo - preco_do_atacado) / preco_do_varejo * 100
     margem_atacado = (preco_do_atacado - preco_do_produtor) / preco_do_varejo * 100
     margem_produtor = (preco_do_produtor / preco_do_varejo) * 100
+    participacao_do_produtor = 100 - margem_total
     st.write(f"Margem do Varejo: {margem_varejo:.2f}%")
     st.write(f"Margem do Atacado: {margem_atacado:.2f}%")
     st.write(f"Margem do Produtor: {margem_produtor:.2f}%")
     st.write(f"Margem Total: {margem_total:.2f}%")
+    st.write(f"Participação do Produtor: {participacao_do_produto:.2f}%")
 
 # Se o usuário fizer o upload de um arquivo
 uploaded_file = st.file_uploader("Escolha um arquivo", type=["xlsx", "csv"])
